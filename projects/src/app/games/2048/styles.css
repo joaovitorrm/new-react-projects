@@ -1,0 +1,88 @@
+.title {
+    color: hsl(0, 0%, 80%);
+    font-size: 7vmin;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 50vmin;
+    aspect-ratio: 1/1;
+    gap: 1.2vmin;
+    background-color: hsl(30, 15%, 30%);
+    outline: 1.5vmin solid hsl(30, 15%, 30%);
+    border-radius: 1vmin;
+    margin-top: 2vmin;
+    & .cell {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 0.5vmin;
+        background-color: hsl(40, 40%, 75%);
+        font-size: 4vmin;
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+        color: hsla(0, 0%, 0%, 0.5);
+        font-weight: bolder;
+        &.cell-0 {
+            background-color: hsl(30, 20%, 50%);
+        }
+        &.cell-2 {
+            background-color: hsl(40, 40%, 75%);
+            font-size: 6vmin;
+        }
+        &.cell-4 {
+            background-color: hsl(40, 60%, 75%);
+            font-size: 6vmin;
+        }
+        &.cell-8 {
+            background-color: hsl(30, 60%, 65%);
+            font-size: 6vmin;
+        }
+        &.cell-16 {
+            background-color: hsl(20, 60%, 65%);
+            font-size: 6vmin;
+        }
+        &.cell-32 {
+            background-color: hsl(10, 60%, 65%);
+            color: hsl(0, 0%, 90%);
+            font-size: 6vmin;
+        }
+        &.cell-64 {
+            background-color: hsl(0, 70%, 60%);
+            color: hsl(0, 0%, 90%);
+            font-size: 6vmin;
+        }
+        &.cell-128 {
+            background-color: hsl(50, 60%, 65%);
+            color: hsl(0, 0%, 90%);
+            font-size: 5vmin;
+        }
+        &.cell-128 {
+            background-color: hsl(50, 65%, 65%);
+            color: hsl(0, 0%, 90%);
+            font-size: 5vmin;
+        }
+        &.cell-256 {
+            background-color: hsl(50, 70%, 60%);
+            color: hsl(0, 0%, 90%);
+            font-size: 5vmin;
+        }
+        &.cell-512 {
+            background-color: hsl(50, 70%, 55%);
+            color: hsl(0, 0%, 90%);
+            font-size: 5vmin;
+        }
+        &.cell-1024 {
+            background-color: hsl(50, 75%, 55%);
+            color: hsl(0, 0%, 90%);
+            font-size: 4vmin;
+        }
+        &.cell-2048 {
+            background-color: hsl(50, 80%, 50%);
+            color: hsl(0, 0%, 90%);
+            font-size: 4vmin;
+        }
+    }    
+}
