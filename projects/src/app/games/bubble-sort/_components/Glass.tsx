@@ -1,3 +1,5 @@
+import styles from '../styles.module.css'
+
 import Bubble from "./Bubble"
 
 interface GlassProps {
@@ -8,7 +10,7 @@ interface GlassProps {
 
 export default function Glass(props: GlassProps) {
     return (
-        <div className={`glass ${props.isSelected ? 'selected' : ''}`} onClick={() => {console.log("A"); props.onClick()}}>
+        <div className={`${styles["glass"]} ${props.isSelected ? styles["selected"] : ''}`} onClick={() => props.onClick()}>
             {props.bubbles.map((bubble, index) => (<Bubble key={index} color={bubble} />))}
         </div>
     )

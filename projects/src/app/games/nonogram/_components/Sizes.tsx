@@ -1,4 +1,4 @@
-
+import styles from '../styles.module.css'
 
 interface Props {
     onChangeSize: (size: number) => void;
@@ -8,7 +8,7 @@ interface Props {
 export default function Sizes(props: Props) {
 
     return (
-        <div className="sizes">
+        <div className={styles["sizes"]}>
             {Array(3).fill(0).map((_, index) => (
                 <div key={index}>
                     <input 

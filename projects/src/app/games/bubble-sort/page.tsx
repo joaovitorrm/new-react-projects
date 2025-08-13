@@ -1,7 +1,7 @@
 'use client'
 
 import Glass from './_components/Glass';
-import './styles.css'
+import styles from './styles.module.css'
 
 import { useEffect, useReducer } from "react"
 
@@ -80,9 +80,9 @@ export default function BubbleSort() {
     }, []);
 
     return (
-        <div className='game-div'>
-            <h1 className="title">Bubble Sort</h1>
-            <div className='glasses-div'>
+        <div className={styles["game-div"]}>
+            <h1 className={styles["title"]}>Bubble Sort</h1>
+            <div className={styles["glasses-div"]}>
                 {state.glasses.map((glass, index) => (
                     <Glass 
                         key={index}
@@ -92,7 +92,7 @@ export default function BubbleSort() {
                     />
                 ))}
             </div>
-            {state.isWon &&<button className='reset-btn' onClick={() => {dispatch({ type: "CREATE" })}}>Reset</button>}
+            {state.isWon &&<button className={styles["reset-btn"]} onClick={() => {dispatch({ type: "CREATE" })}}>Reset</button>}
         </div>
     )
 }

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Nonogram from "./_components/Nonogram";
 import Sizes from "./_components/Sizes";
 
-import './styles.css'
+import styles from './styles.module.css'
 
 export default function Game() {
 
@@ -15,9 +15,9 @@ export default function Game() {
     }
 
     return (
-        <div className="game">
+        <div className={`${styles["game"]} game` }>
         
-            <h1 className="title">Nonogram</h1>
+            <h1 className={"title"}>Nonogram</h1>
 
             <Nonogram size={size}/>
 

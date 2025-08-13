@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useReducer } from 'react';
-import './styles.css';
+import styles from './styles.module.css'
 import Cell from './_components/Cell';
 
 type Action =
@@ -137,8 +137,8 @@ export default function Game2048() {
 
     return (
         <>
-            <h1 className="title">2048</h1>
-            <div className="game">
+            <h1 className={styles.title}>2048</h1>
+            <div className={styles.game}>
                 {state.grid.map((row, y) => (
                     row.map((value, x) =>
                         <Cell key={`${x}-${y}`} value={value} />

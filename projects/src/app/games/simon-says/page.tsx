@@ -3,7 +3,7 @@
 import { useEffect, useReducer } from "react";
 import Light from "./_components/Light";
 
-import "./styles.css"
+import styles from './styles.module.css'
 
 const colors = ["green", "red", "yellow", "blue"];
 
@@ -137,10 +137,10 @@ export default function SimonSays() {
     }, [state.click.index])
 
     return (
-        <div className="game">
+        <div className={`${styles["game"]} game`}>
             <h1 className="title">Simon Says</h1>
 
-            <div className="simon-says">
+            <div className={styles["simon-says"]}>
                 {colors.map((color, index) => (
                     <Light
                         key={index}
@@ -148,10 +148,10 @@ export default function SimonSays() {
                         isActive={state.showingColor === color}
                         onClick={() => dispatch({ type: "CLICK_COLOR", payload: { color: color } })}
                     />))}
-                <div className="center-score">{state.score}</div>
+                <div className={styles["center-score"]}>{state.score}</div>
             </div>
 
-            <button className={`start-btn ${state.pattern.length > 0 && "disabled"}`} onClick={() => dispatch({ type: "ADD_PATTERN" })}>Start</button>
+            <button className={`${styles["start-btn"]} ${state.pattern.length > 0 && styles["disabled"]}`} onClick={() => dispatch({ type: "ADD_PATTERN" })}>Start</button>
         </div>
     )
 }

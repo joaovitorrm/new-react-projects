@@ -1,8 +1,3 @@
-:root {
-    --light-radius: 5%;
-    --light-outer-radius: 100%;
-}
-
 .game {
     gap: 2vmin;
     font-size: 3vmin;
@@ -28,6 +23,8 @@
 }
 
 .simon-says {
+    --light-radius: 5%;
+    --light-outer-radius: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);

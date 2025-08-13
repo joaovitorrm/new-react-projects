@@ -1,5 +1,6 @@
 'use client'
 
+import styles from '../styles.module.css'
 import { useEffect, useReducer } from "react"
 
 type Action =
@@ -129,30 +130,30 @@ export default function Nonogram(props: Props) {
     }, [props.size])
 
     return (
-        <div className="game-grid">
-            <div className={`horizontal-hints size-${state.grid_size}`}>
+        <div className={styles["game-grid"]}>
+            <div className={`${styles["horizontal-hints"]} ${styles[`size-${state.grid_size}`]}`}>
                 {state.vertical_hints.flatMap((row, y) => (
-                    <div className="hint-row" key={y}>
+                    <div className={styles["hint-row"]} key={y}>
                         {row.map((value, x) => (
-                            <div className="hint-cell" key={`${x}-${y}`}>{value}</div>
+                            <div className={styles["hint-cell"]} key={`${x}-${y}`}>{value}</div>
                         ))}
                     </div>
                 ))}
             </div>
-            <div className={`vertical-hints size-${state.grid_size}`}>
+            <div className={`${styles["vertical-hints"]} ${styles[`size-${state.grid_size}`]}`}>
                 {state.horizontal_hints.flatMap((row, y) => (
-                    <div className="hint-column" key={y}>
+                    <div className={styles["hint-column"]} key={y}>
                         {row.map((value, x) => (
-                            <div className="hint-cell" key={`${x}-${y}`}>{value}</div>
+                            <div className={styles["hint-cell"]} key={`${x}-${y}`}>{value}</div>
                         ))}
                     </div>
                 ))}
             </div>
-            <div className={`nonogram size-${state.grid_size}`}>
+            <div className={`${styles["nonogram"]} ${styles[`size-${state.grid_size}`]}`}>
                 {state.player_grid.flatMap((row, y) => (
                     row.map((value, x) => (
                         <div
-                            className={`cell ${value === 1 ? 'filled' : ''} ${value === 2 ? 'wrong' : ''}`}
+                            className={`${styles["cell"]} ${value === 1 ? styles['filled'] : ''} ${value === 2 ? styles['wrong'] : ''}`}
                             key={`${x}-${y}`}
                             onPointerDown={(e) => dispatch({ type: "HANDLE_CLICK_CELL", payload: { x, y, e, value } })}
                             onPointerEnter={(e) => dispatch({ type: "HANDLE_CLICK_CELL", payload: { x, y, e, value } })}
@@ -163,10 +164,10 @@ export default function Nonogram(props: Props) {
                     ))
                 ))}
             </div>
-            <div className="lives">
+            <div className={styles["lives"]}>
                 {Array(state.player_lives.max).fill(0).map((_, index) => (
                     <div 
-                        className={`life ${index < state.player_lives.current ? 'alive' : ''}`} 
+                        className={`${styles["life"]} ${index < state.player_lives.current ? styles['alive'] : ''}`} 
                         key={index}
                     ></div>
                 ))}

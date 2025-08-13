@@ -1,3 +1,4 @@
+import styles from "../styles.module.css"
 
 interface LightProps {
     color: string;
@@ -7,6 +8,6 @@ interface LightProps {
 
 export default function Light(props: LightProps) {
     return (
-        <div className={`light ${props.color} ${props.isActive ? 'active' : ''}`} onClick={props.onClick}></div>
+        <div className={`${styles["light"]} ${styles[`${props.color}`]} ${props.isActive ? styles['active'] : ''}`} onClick={props.onClick}></div>
     )
 }
